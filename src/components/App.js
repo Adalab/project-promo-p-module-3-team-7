@@ -1,12 +1,22 @@
 import logo from '../images/kawaiiPC-logo.png';
 import logoSmall from '../images/kawaiiPC-logoSmall.png';
 import '../styles/App.scss';
+import { useState } from 'react';
 
 function App() {
+  // funciones que recogen estados
+  // funciones que modifican estados
+  const [name, setName] = useState('');
+
+  const handleName = (event) => {
+    setName(event.currentTarget.value);
+  };
+
+  // return que renderiza según el estado
   return (
     <>
       <header className="header">
-        <a href="./index.html" title="¡Volver al inicio!" rel="noreferrer">
+        <a href="#bottom" title="¡Volver al inicio!" rel="noreferrer">
           <img
             src={logo}
             alt="Awesome profile-cards"
@@ -35,6 +45,7 @@ function App() {
                 <ul className="cardMenu">
                   <li className="cardMenu__icon">
                     <a
+                      href="#bottom"
                       className="cardMenu__link js_cardPhone js_cardLink"
                       rel="noreferrer"
                       target="_blank"
@@ -45,6 +56,7 @@ function App() {
                   </li>
                   <li className="cardMenu__icon">
                     <a
+                      href="#bottom"
                       className="cardMenu__link js_cardEmail js_cardLink"
                       target="_blank"
                       title="Dirección de correo"
@@ -54,6 +66,7 @@ function App() {
                   </li>
                   <li className="cardMenu__icon">
                     <a
+                      href="#bottom"
                       className="cardMenu__link js_cardLinkedin js_cardLink"
                       target="_blank"
                       title="Perfil en LinkedIn"
@@ -64,6 +77,7 @@ function App() {
                   </li>
                   <li className="cardMenu__icon">
                     <a
+                      href="#bottom"
                       className="cardMenu__link js_cardGithub js_cardLink"
                       target="_blank"
                       title="Perfil de GitHub"
@@ -103,17 +117,17 @@ function App() {
                   />
 
                   <label
-                    for="radio1"
+                    htmlFor="radio1"
                     className="palette__sample palette__sample--1"
                   ></label>
 
                   <label
-                    for="radio1"
+                    htmlFor="radio1"
                     className="palette__sample palette__sample--2"
                   ></label>
 
                   <label
-                    for="radio1"
+                    htmlFor="radio1"
                     className="palette__sample palette__sample--3"
                   ></label>
                 </div>
@@ -128,17 +142,17 @@ function App() {
                   />
 
                   <label
-                    for="radio2"
+                    htmlFor="radio2"
                     className="palette__sample palette__sample--4"
                   ></label>
 
                   <label
-                    for="radio2"
+                    htmlFor="radio2"
                     className="palette__sample palette__sample--5"
                   ></label>
 
                   <label
-                    for="radio2"
+                    htmlFor="radio2"
                     className="palette__sample palette__sample--6"
                   ></label>
                 </div>
@@ -153,17 +167,17 @@ function App() {
                   />
 
                   <label
-                    for="radio3"
+                    htmlFor="radio3"
                     className="palette__sample palette__sample--7"
                   ></label>
 
                   <label
-                    for="radio3"
+                    htmlFor="radio3"
                     className="palette__sample palette__sample--8"
                   ></label>
 
                   <label
-                    for="radio3"
+                    htmlFor="radio3"
                     className="palette__sample palette__sample--9"
                   ></label>
                 </div>
@@ -178,17 +192,17 @@ function App() {
                   />
 
                   <label
-                    for="radio4"
+                    htmlFor="radio4"
                     className="palette__sample palette__sample--10"
                   ></label>
 
                   <label
-                    for="radio4"
+                    htmlFor="radio4"
                     className="palette__sample palette__sample--11"
                   ></label>
 
                   <label
-                    for="radio4"
+                    htmlFor="radio4"
                     className="palette__sample palette__sample--12"
                   ></label>
                 </div>
@@ -207,7 +221,7 @@ function App() {
               <i className="fas fa-angle-up legend__icon legend__icon--arrow js_arrowFill rotate"></i>
             </legend>
             <div className="containerFill js_fill collapsed">
-              <label className="label" for="name">
+              <label className="label" htmlFor="name">
                 Nombre completo
               </label>
               <input
@@ -218,7 +232,7 @@ function App() {
                 placeholder="P. ej. Usagi Tsukino"
               />
 
-              <label className="label" for="job">
+              <label className="label" htmlFor="job">
                 Puesto
               </label>
               <input
@@ -229,14 +243,14 @@ function App() {
                 placeholder="P. ej. Pretty Guardian"
               />
 
-              <label className="label" for="">
+              <label className="label" htmlFor="">
                 Imagen de perfil
               </label>
               <div className="component">
                 <label
                   className="component__btnAddImage js__profile-trigger"
                   type="button"
-                  for="addPhoto"
+                  htmlFor="addPhoto"
                 >
                   Añadir imagen
                 </label>
@@ -250,7 +264,7 @@ function App() {
                 <div className="component__square js__profile-preview"></div>
               </div>
 
-              <label className="label" for="email">
+              <label className="label" htmlFor="email">
                 E-mail
               </label>
               <input
@@ -261,7 +275,7 @@ function App() {
                 placeholder="P. ej. rei-hino@sailor.mars"
               />
 
-              <label className="label" for="phone">
+              <label className="label" htmlFor="phone">
                 Teléfono
               </label>
               <input
@@ -272,7 +286,7 @@ function App() {
                 placeholder="P. ej. 987 654 321"
               />
 
-              <label className="label" for="linkedin">
+              <label className="label" htmlFor="linkedin">
                 LinkedIn
               </label>
               <input
@@ -283,7 +297,7 @@ function App() {
                 placeholder="P. ej. ami.mizuno"
               />
 
-              <label className="label" for="github">
+              <label className="label" htmlFor="github">
                 GitHub
               </label>
               <input
@@ -329,6 +343,7 @@ function App() {
           <img className="img_logo" src={logoSmall} alt="Logo Adalab" />
         </a>
       </footer>
+      <p id="bottom"></p>
     </>
   );
 }
