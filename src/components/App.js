@@ -25,12 +25,17 @@ function App() {
       [inputChanged]: inputValue,
     });
   };
-
   //FUNCIÓN COLAPSABLES
-  const [arrowRotate, setArrowRotate] = useState();
+  const [arrowRotate, setArrowRotate] = useState('');
+  const [sectionDesign, setSectionDesign] = useState('');
   const handleCollapsed = (ev) => {
     ev.preventDefault();
-    console.log('holaa');
+    const id = ev.currentTarget.id
+    const classHidden = '';
+    if (id === 'designLegend') {
+      setArrowRotate ('rotate')
+      setSectionDesign ('collapsed')
+    }
   };
 
   //FUNCIÓN RESET DATA
@@ -49,6 +54,7 @@ function App() {
 
   return (
     <>
+{/* Header */}
       <header className="header">
         <a href="#bottom" title="¡Volver al inicio!" rel="noreferrer">
           <img
@@ -58,13 +64,15 @@ function App() {
           />
         </a>
       </header>
+
       <main className="mainCreate">
+        {/* TARJETA */}
         <section className="preview">
           <article>
             <button className="card__reset js_reset" onClick={handleReset}>
               <i className="card__icon far fa-trash-alt"></i>Reset
             </button>
-            {/* ksksks */}
+            
             <div className="palette-1 containerCard js_preview">
               <div className="cardInfo js_cardInfo">
                 <h2 className="cardInfo__name js_cardName">Nombre apellidos</h2>
@@ -126,7 +134,7 @@ function App() {
             </div>
           </article>
         </section>
-
+{/* FORMULARIO DISEÑA */}
         <form action="" className="form js_form">
           <fieldset className="fieldset">
             <legend
@@ -137,12 +145,13 @@ function App() {
             >
               <i className="far fa-object-ungroup legend__icon legend__icon--orange"></i>
               <span className="legend__text">Diseña</span>
-              <i className="fas fa-angle-up legend__icon legend__icon--arrow js_arrowDesign"></i>
+              <i className={`fas fa-angle-up legend__icon legend__icon--arrow js_arrowDesign ${arrowRotate}`}></i>
             </legend>
-            <section className="containerDesign js_design">
+            <section className={`containerDesign js_design ${sectionDesign}`}>
               <h2 className="containerDesign__title">Colores</h2>
               <div className="containerDesign__options">
                 <div className="options__palette">
+{/* PALETAS */}
                   <input
                     className="radio js_radio-1 js_radio"
                     name="palette"
@@ -225,7 +234,7 @@ function App() {
               </div>
             </section>
           </fieldset>
-
+{/* FORMULARIO RELLENA */}
           <fieldset className="fieldset">
             <legend
               className="legend js_fillLegend uppercase"
@@ -235,9 +244,9 @@ function App() {
             >
               <i className="far fa-keyboard legend__icon legend__icon--orange"></i>
               <span className="legend__text">Rellena</span>
-              <i className="fas fa-angle-up legend__icon legend__icon--arrow js_arrowFill rotate"></i>
+              <i className="fas fa-angle-up legend__icon legend__icon--arrow js_arrowFill"></i>
             </legend>
-            <div className="containerFill js_fill collapsed">
+            <div className="containerFill js_fill">
               <label className="label" htmlFor="name">
                 Nombre completo
               </label>
@@ -340,7 +349,7 @@ function App() {
               />
             </div>
           </fieldset>
-
+{/* FORMULARIO COMPARTE */}
           <fieldset className="fieldset">
             <legend
               className="legend js_shareLegend uppercase"
@@ -352,7 +361,7 @@ function App() {
               <span className="legend__text">Comparte</span>
               <i className="fas fa-angle-up legend__icon legend__icon--arrow js_arrowShare rotate"></i>
             </legend>
-            <div className="containerShare js_share collapsed">
+            <div className="containerShare js_share">
               <button className="buttonCreateCard uppercase js_buttonCreateCard">
                 <i className="fa-regular fa-address-card buttonCreateCard__icon"></i>
                 Crear tarjeta
