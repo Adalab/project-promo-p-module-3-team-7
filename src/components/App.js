@@ -16,6 +16,11 @@ function App() {
     phone: '',
   });
 
+  //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
+
   //FUNCIÓN VALOR INPUT
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -25,6 +30,7 @@ function App() {
       [inputChanged]: inputValue,
     });
   };
+
   //FUNCIÓN COLAPSABLES
   const [arrowRotate, setArrowRotate] = useState('');
   const [sectionDesign, setSectionDesign] = useState('');
@@ -138,7 +144,7 @@ function App() {
 
         {/* FORMULARIO DISEÑA */}
 
-        <form action="" className="form js_form">
+        <form action="" className="form js_form" onSubmit={handleSubmit}>
           <fieldset className="fieldset">
             <legend
               className="legend js_designLegend uppercase"
