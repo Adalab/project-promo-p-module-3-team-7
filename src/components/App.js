@@ -13,7 +13,7 @@ function App() {
     addPhoto: '',
     github: '',
     linkedin: '',
-    phone: '',
+    phone: ''
   });
 
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
@@ -27,7 +27,7 @@ function App() {
     const inputChanged = ev.target.name;
     setDataCard({
       ...dataCard,
-      [inputChanged]: inputValue,
+      [inputChanged]: inputValue
     });
   };
 
@@ -53,8 +53,10 @@ function App() {
       phone: '',
       linkedin: '',
       github: '',
-      photo: '',
+      photo: ''
     };
+
+    setDataCard({...dataCard});
   };
 
   return (
@@ -72,6 +74,7 @@ function App() {
       </header>
 
       <main className="mainCreate">
+
         {/* TARJETA */}
 
         <section className="preview">
@@ -284,7 +287,7 @@ function App() {
                 id="job"
                 placeholder="P. ej. Pretty Guardian"
                 onChange={handleInput}
-                value={dataCard.name}
+                value={dataCard.job}
               />
 
               <label className="label" htmlFor="">
@@ -304,7 +307,7 @@ function App() {
                   name="addPhoto"
                   id="addPhoto"
                   onChange={handleInput}
-                  value={dataCard.name}
+                  value={dataCard.photo}
                 />
 
                 <div className="component__square js__profile-preview"></div>
@@ -320,7 +323,7 @@ function App() {
                 id="email"
                 placeholder="P. ej. rei-hino@sailor.mars"
                 onChange={handleInput}
-                value={dataCard.name}
+                value={dataCard.email}
               />
 
               <label className="label" htmlFor="phone">
@@ -333,7 +336,7 @@ function App() {
                 id="phone"
                 placeholder="P. ej. 987 654 321"
                 onChange={handleInput}
-                value={dataCard.name}
+                value={dataCard.phone}
               />
 
               <label className="label" htmlFor="linkedin">
@@ -346,7 +349,7 @@ function App() {
                 id="linkedin"
                 placeholder="P. ej. ami.mizuno"
                 onChange={handleInput}
-                value={dataCard.name}
+                value={dataCard.linkedin}
               />
 
               <label className="label" htmlFor="github">
@@ -359,7 +362,7 @@ function App() {
                 id="github"
                 placeholder="P. ej. chibiusa"
                 onChange={handleInput}
-                value={dataCard.name}
+                value={dataCard.github}
               />
             </div>
           </fieldset>
