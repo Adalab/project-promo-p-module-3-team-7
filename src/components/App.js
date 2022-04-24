@@ -31,6 +31,10 @@ function App() {
     });
   };
 
+  //FUNCIÓN RENDERIZAR INPUTS
+
+
+
   //FUNCIÓN COLAPSABLES
   const [arrowRotate, setArrowRotate] = useState('');
   const [sectionDesign, setSectionDesign] = useState('');
@@ -85,10 +89,11 @@ function App() {
 
             <div className="palette-1 containerCard js_preview">
               <div className="cardInfo js_cardInfo">
-                <h2 className="cardInfo__name js_cardName">Nombre apellidos</h2>
-                {/* Tarjeta cambiar nombre y profesion {dataCard.name || 'Nombre y apellidos'}*/}
+                <h2 className="cardInfo__name js_cardName"> {dataCard.name || 'Nombre y apellidos'}
+                </h2>
+               
                 <p className="cardInfo__description js_cardJob">
-                  Front-end developer
+                  {dataCard.job || 'Front-end developer'}
                 </p>
               </div>
 
