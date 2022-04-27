@@ -13,7 +13,7 @@ function App() {
     addPhoto: '',
     github: '',
     linkedin: '',
-    phone: ''
+    phone: '',
   });
 
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
@@ -27,13 +27,19 @@ function App() {
     const inputChanged = ev.target.name;
     setDataCard({
       ...dataCard,
-      [inputChanged]: inputValue
+      [inputChanged]: inputValue,
     });
   };
 
-  //FUNCIÓN RENDERIZAR INPUTS
+  //PINTAR PALETAS
 
-
+  const handlePalettes = (ev) => {
+    const value = ev.target.value;
+    setDataCard({
+      ...dataCard,
+      palette: value,
+    });
+  };
 
   //FUNCIÓN COLAPSABLES
   const [arrowRotate, setArrowRotate] = useState('');
@@ -57,10 +63,10 @@ function App() {
       phone: '',
       linkedin: '',
       github: '',
-      photo: ''
+      photo: '',
     };
 
-    setDataCard({...dataCard});
+    setDataCard({ ...dataCard });
   };
 
   return (
@@ -78,7 +84,6 @@ function App() {
       </header>
 
       <main className="mainCreate">
-
         {/* TARJETA */}
 
         <section className="preview">
@@ -87,11 +92,15 @@ function App() {
               <i className="card__icon far fa-trash-alt"></i>Reset
             </button>
 
-            <div className="palette-1 containerCard js_preview">
+            <div
+              className={`palette-${dataCard.palette} containerCard js_preview`}
+            >
               <div className="cardInfo js_cardInfo">
-                <h2 className="cardInfo__name js_cardName"> {dataCard.name || 'Nombre y apellidos'}
+                <h2 className="cardInfo__name js_cardName">
+                  {' '}
+                  {dataCard.name || 'Nombre y apellidos'}
                 </h2>
-               
+
                 <p className="cardInfo__description js_cardJob">
                   {dataCard.job || 'Front-end developer'}
                 </p>
@@ -178,7 +187,7 @@ function App() {
                     type="radio"
                     id="radio1"
                     value="1"
-                    onChange={handleInput}
+                    onChange={handlePalettes}
                     checked={dataCard.palette === '1'}
                   />
 
@@ -205,7 +214,7 @@ function App() {
                     type="radio"
                     id="radio2"
                     value="2"
-                    onChange={handleInput}
+                    onChange={handlePalettes}
                     checked={dataCard.palette === '2'}
                   />
 
@@ -232,7 +241,7 @@ function App() {
                     type="radio"
                     id="radio3"
                     value="3"
-                    onChange={handleInput}
+                    onChange={handlePalettes}
                     checked={dataCard.palette === '3'}
                   />
 
