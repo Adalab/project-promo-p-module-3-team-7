@@ -1,12 +1,12 @@
-const dataApi = (data) => {
+const dataApi = (dataCard) => {
   return fetch('//awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    body: JSON.stringify(dataCard),
   })
     .then((response) => response.json())
-    .then((data) => {
-      return data;
+    .then((dataCard) => {
+      return dataCard;
     });
 };
 
