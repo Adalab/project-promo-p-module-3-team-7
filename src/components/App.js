@@ -2,6 +2,7 @@ import logo from '../images/kawaiiPC-logo.png';
 import logoSmall from '../images/kawaiiPC-logoSmall.png';
 import '../styles/App.scss';
 import { useState } from 'react';
+import dataApi from '../services/Api';
 
 function App() {
   //OBJETO DATA
@@ -10,11 +11,23 @@ function App() {
     name: '',
     job: '',
     email: '',
-    addPhoto: '',
+    photo:
+      'https://st.depositphotos.com/1376300/2455/i/600/depositphotos_24559761-stock-photo-idyllic-white-beach-in-front.jpg',
     github: '',
     linkedin: '',
     phone: '',
   });
+
+  //CONSTANTE APIDATA
+
+  const [apiData, setApiData] = useState({});
+  const handlelickCreateCard = (ev) => {
+    ev.preventDefault();
+    dataApi(dataCard).then((info) => {
+      console.log(info);
+      setApiData(info);
+    });
+  };
 
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
   const handleSubmit = (ev) => {
@@ -311,17 +324,17 @@ function App() {
                 <label
                   className="component__btnAddImage js__profile-trigger"
                   type="button"
-                  htmlFor="addPhoto"
+                  htmlFor="photo"
                 >
                   Añadir imagen
                 </label>
                 <input
                   className="action__hiddenField js__profile-upload-btn js_photo"
-                  type="file"
-                  name="addPhoto"
-                  id="addPhoto"
+                  // type="file"
+                  name="photo"
+                  id="photo"
                   onChange={handleInput}
-                  value={dataCard.photo}
+                  // value={dataCard.photo}
                 />
 
                 <div className="component__square js__profile-preview"></div>
@@ -395,12 +408,17 @@ function App() {
               <i className="fas fa-angle-up legend__icon legend__icon--arrow js_arrowShare rotate"></i>
             </legend>
             <div className="containerShare js_share">
-              <button className="buttonCreateCard uppercase js_buttonCreateCard">
+              <button
+                className="buttonCreateCard uppercase js_buttonCreateCard"
+                onClick={handlelickCreateCard}
+              >
                 <i className="fa-regular fa-address-card buttonCreateCard__icon"></i>
                 Crear tarjeta
               </button>
 
-              <div className="containerDone js_containerDone collapsed"></div>
+              <div className="containerDone js_containerDone ">
+                <a href={`${apiData.cardURL}`}>{apiData.cardURL} </a>
+              </div>
             </div>
           </fieldset>
         </form>
