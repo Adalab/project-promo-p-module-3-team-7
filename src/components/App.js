@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import dataApi from '../services/Api';
 import CardPreview from './CardPreview';
+import Footer from '../components/Footer';
 
 function App() {
   // //OBJETO DATA
@@ -342,17 +343,7 @@ function App() {
           </fieldset>
         </form>
       </main>
-      <footer className="footer">
-        <small className="small_text">Kawaii profile-cards &copy; 2022</small>
-        <a
-          href="https://adalab.es/"
-          title="Visita Adalab"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img className="img_logo" src={logoSmall} alt="Logo Adalab" />
-        </a>
-      </footer>
+      <Footer logoSmall={logoSmall}/>
       <p id="bottom"></p>
     </>
   );
