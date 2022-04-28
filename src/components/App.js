@@ -2,6 +2,7 @@ import logo from '../images/kawaiiPC-logo.png';
 import logoSmall from '../images/kawaiiPC-logoSmall.png';
 import '../styles/App.scss';
 import { useState } from 'react';
+import Header from '../components/Header';
 
 function App() {
   // funciones que recogen estados
@@ -15,15 +16,7 @@ function App() {
   // return que renderiza según el estado
   return (
     <>
-      <header className="header">
-        <a href="#bottom" title="¡Volver al inicio!" rel="noreferrer">
-          <img
-            src={logo}
-            alt="Awesome profile-cards"
-            className="imageAwesome"
-          />
-        </a>
-      </header>
+     <Header  logo={logo} />
       <main className="mainCreate">
         <section className="preview">
           <article>
@@ -113,7 +106,7 @@ function App() {
                     type="radio"
                     id="radio1"
                     value="1"
-                    checked
+                    defaultChecked
                   />
 
                   <label
