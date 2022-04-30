@@ -1,4 +1,5 @@
 //import logo from '../images/kawaiiPC-logo.png';
+import '../styles/core/_variables.scss';
 
 const Header = (props) => {
      return (

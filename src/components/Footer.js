@@ -1,5 +1,5 @@
-import FooterStyles from '../styles/layout/Footer.scss';
-import Variables from '../styles/core/_variables.scss';
+// import '../styles/layout/_footer.scss';
+// import '../styles/core/_variables.scss';
 
 const Footer = (props) => {
     return (
