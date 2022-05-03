@@ -36,7 +36,7 @@ function Design(props) {
               type="radio"
               id="radio1"
               value="1"
-              onChange={props.handlePalettes}
+              onChange={handlePalettes}
               checked={props.dataCard.palette === '1'}
             />
 
@@ -63,7 +63,7 @@ function Design(props) {
               type="radio"
               id="radio2"
               value="2"
-              onChange={props.handlePalettes}
+              onChange={handlePalettes}
               checked={props.dataCard.palette === '2'}
             />
 
@@ -90,7 +90,7 @@ function Design(props) {
               type="radio"
               id="radio3"
               value="3"
-              onChange={props.handlePalettes}
+              onChange={handlePalettes}
               checked={props.dataCard.palette === '3'}
             />
 
