@@ -1,6 +1,3 @@
-import logo from '../images/kawaiiPC-logo.png';
-import logoSmall from '../images/kawaiiPC-logoSmall.png';
-import '../styles/App.scss';
 import { useState } from 'react';
 import Header from './Header';
 import dataApi from '../services/Api';
@@ -84,7 +81,20 @@ function App() {
     setDataCard({ ...dataCard });
   };
 
-  return <Card dataCard= {dataCard} handlePalettes={handlePalettes}handleInput={handleInput} handleClickCreateCard={handleClickCreateCard} apiData={apiData}/>;
+  return (
+    <>
+      <Header />
+      <Card
+        dataCard={dataCard}
+        handlePalettes={handlePalettes}
+        handleInput={handleInput}
+        handleClickCreateCard={handleClickCreateCard}
+        apiData={apiData}
+      />
+
+      <Footer />
+    </>
+  );
 }
 
 export default App;
