@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.79830dfa.css",
-    "main.js": "./static/js/main.a06b19e5.js",
+    "main.js": "./static/js/main.82c5e758.js",
     "static/media/kawaiiAvatar.gif": "./static/media/kawaiiAvatar.090568c562d5d71030a7.gif",
     "static/media/kawaiiPC-logo.png": "./static/media/kawaiiPC-logo.dcc806782b4608620ee8.png",
     "index.html": "./index.html",
     "main.79830dfa.css.map": "./static/css/main.79830dfa.css.map",
-    "main.a06b19e5.js.map": "./static/js/main.a06b19e5.js.map"
+    "main.82c5e758.js.map": "./static/js/main.82c5e758.js.map"
   },
   "entrypoints": [
     "static/css/main.79830dfa.css",
-    "static/js/main.a06b19e5.js"
+    "static/js/main.82c5e758.js"
   ]
 }
