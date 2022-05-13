@@ -6,7 +6,7 @@ function Share(props) {
     props.handleClickCreateCard();
   };
   const handleCollapsed = (ev) => {
-    props.handleCollapsed();
+    props.handleCollapsed(ev);
   };
 
   return (

@@ -1,13 +1,19 @@
 import '../styles/components/CardPreview.scss';
 
 function CardPreview(props) {
+  console.log(props);
+  const handleClick = () => {
+    //NO FUNCIONA RESET
+
+    props.handleReset();
+  };
+
   return (
     <section className="preview">
       <article>
-        <button className="card__reset js_reset">
+        <button className="card__reset js_reset" onClick={handleClick}>
           <i className="card__icon far fa-trash-alt"></i>Reset
         </button>
-        {/* onClick={handleReset} */}
 
         <div
           className={`palette-${props.dataCard.palette} containerCard js_preview`}

@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import Header from './Header';
 import dataApi from '../services/Api';
-import CardPreview from './CardPreview';
 import Footer from './Footer';
 import Card from './Card';
 
+import localStorage from '../services/localStorage';
+
 function App() {
   // //OBJETO DATA
+
   const [dataCard, setDataCard] = useState({
     palette: '1',
     name: '',
@@ -34,13 +36,14 @@ function App() {
   };
 
   //FUNCIÓN VALOR INPUT
-  const handleInput = (ev) => {
-    const inputValue = ev.target.value;
-    const inputChanged = ev.target.name;
-    setDataCard({
+  const handleInput = (inputValue, inputChanged) => {
+    const newCard = {
       ...dataCard,
       [inputChanged]: inputValue,
-    });
+    };
+
+    setDataCard(newCard);
+    localStorage.set('dataCard', newCard);
   };
 
   //PINTAR PALETAS
@@ -57,18 +60,20 @@ function App() {
   const [arrowRotate, setArrowRotate] = useState('');
   const [sectionDesign, setSectionDesign] = useState('');
   const handleCollapsed = (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
     const id = ev.currentTarget.id;
+
     if (id === 'designLegend') {
+      console.log(id);
       setArrowRotate('rotate');
       setSectionDesign('collapsed');
     }
   };
 
   //FUNCIÓN RESET DATA
-  const handleReset = () => {
-    const dataCard = {
-      palette: 1,
+  const handleReset = (ev) => {
+    setDataCard({
+      palette: '1',
       name: '',
       job: '',
       email: '',
@@ -76,11 +81,11 @@ function App() {
       linkedin: '',
       github: '',
       photo: '',
-    };
-
-    setDataCard({ ...dataCard });
+    });
+    setApiData();
   };
 
+  // setDataCard({ ...dataCard });
   return (
     <>
       <Header />
@@ -90,6 +95,11 @@ function App() {
         handleInput={handleInput}
         handleClickCreateCard={handleClickCreateCard}
         apiData={apiData}
+        handleSubmit={handleSubmit}
+        handleCollapsed={handleCollapsed}
+        arrowRotate={arrowRotate}
+        sectionDesign={sectionDesign}
+        handleReset={handleReset}
       />
 
       <Footer />

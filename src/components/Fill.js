@@ -1,21 +1,22 @@
 import '../styles/components/Fill.scss';
 function Fill(props) {
   const handleInput = (ev) => {
-    props.handleInput({
-      value: ev.target.value,
-      name: ev.target.name,
-    });
+    const inputValue = ev.target.value;
+    const inputChanged = ev.target.name;
+    props.handleInput(inputValue, inputChanged);
   };
-  const handleCollapsed = (ev) => {
-    props.handleCollapsed();
+
+  const handleClick = (ev) => {
+    props.handleCollapsed(ev);
   };
+
   return (
     <fieldset className="fieldset">
       <legend
         className="legend js_fillLegend uppercase"
         id="fillLegend"
         title="Escribe tus datos"
-        onClick={handleCollapsed}
+        onClick={handleClick}
       >
         <i className="far fa-keyboard legend__icon legend__icon--orange"></i>
         <span className="legend__text">Rellena</span>

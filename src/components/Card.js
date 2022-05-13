@@ -8,13 +8,18 @@ function Card(props) {
   const handleSubmit = (ev) => {
     props.handleSubmit();
   };
+
   return (
     <>
       {/* <Header  logo={logo} /> */}
       <main className="mainCreate">
         {/* TARJETA */}
 
-        <CardPreview dataCard={props.dataCard} />
+        <CardPreview
+          dataCard={props.dataCard}
+          handleReset={props.handleReset}
+          handlePalettes={props.handlePalettes}
+        />
 
         <form action="" className="form js_form" onSubmit={handleSubmit}>
           {/* FORMULARIO DISEÑA */}
@@ -23,17 +28,27 @@ function Card(props) {
             handlePalettes={props.handlePalettes}
             arrowRotate={props.arrowRotate}
             sectionDesign={props.sectionDesign}
+            handleCollapsed={props.handleCollapsed}
           />
 
           {/* FORMULARIO RELLENA */}
 
-          <Fill dataCard={props.dataCard} handleInput={props.handleInput} />
+          <Fill
+            dataCard={props.dataCard}
+            handleInput={props.handleInput}
+            handleCollapsed={props.handleCollapsed}
+            arrowRotate={props.arrowRotate}
+            sectionDesign={props.sectionDesign}
+          />
 
           {/* FORMULARIO COMPARTE */}
 
           <Share
             dataCard={props.dataCard}
             handlelickCreateCard={props.handlelickCreateCard}
+            handleCollapsed={props.handleCollapsed}
+            arrowRotate={props.arrowRotate}
+            sectionDesign={props.sectionDesign}
           />
         </form>
       </main>

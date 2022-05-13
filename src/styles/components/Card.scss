@@ -81,3 +81,10 @@
     gap: 10px;
   }
 }
+
+.collapsed {
+  display: none;
+}
+.rotate {
+  transform: rotate(540deg);
+}
