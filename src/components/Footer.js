@@ -5,7 +5,7 @@ import logoSmall from '../images/plamera_mar.png';
 const Footer = (props) => {
   return (
     <footer className="footer">
-      <small className="small_text">Kawaii profile-cards &copy; 2022</small>
+      <small className="small_text">Equipo playa ⛱ 2022</small>
       <a
         href="https://adalab.es/"
         title="Visita Adalab"
