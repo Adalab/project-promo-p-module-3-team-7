@@ -13,23 +13,25 @@
     flex-grow: 1;
   }
 
-  .card__reset {
-    height: 30px;
-    padding: 5px 12px;
-    border-radius: 15px;
-    border: solid 1px $colorWhite;
-    background-color: transparent;
-    color: $colorCyberGrape;
-    font-family: $fontMain;
-    font-size: 12px;
-    text-transform: uppercase;
+  // .card__reset {
+  //   height: 30px;
+  //   padding: 5px 12px;
+  //   border-radius: 15px;
+  //   border: solid 1px $colorWhite;
+  //   background-color: transparent;
+  //   color: $colorCyberGrape;
+  //   font-family: $fontMain;
+  //   font-size: 12px;
+  //   text-transform: uppercase;
 
-    cursor: pointer;
+  //   cursor: pointer;
 
-    .card__icon {
-      margin-right: 8px;
-    }
-  }
+  
+  // }
+
+
+
+    ///
 
   .containerCard {
     width: 240px;
@@ -93,6 +95,42 @@
     }
   }
 }
+
+  //BOTÓN RESET
+  
+  .card__reset {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color:$colorSlate ;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 3px solid $colorLightGreyBlue;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 $colorMaximumBluePurple;
+
+  }
+  
+  .card__reset:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 $colorMaximumBluePurple;
+  }
+  
+  .card__reset:active {
+    transform: scale(0.9);
+  }
+
+  .card__icon {
+      margin-right: 8px;
+    }
+
+
 
 // Clases para JS
 .preview .palette-1 {
