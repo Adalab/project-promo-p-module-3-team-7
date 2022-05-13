@@ -1,4 +1,7 @@
-import logo from '../images/kawaiiPC-logo.png';
+// import logo from '../images/kawaiiPC-logo.png';
+import logo from '../images/plamera_mar.png';
+// import logo from '../images/palmera.png';
+
 import '../styles/components/Header.scss';
 
 const Header = (props) => {

@@ -1,5 +1,6 @@
 import '../styles/components/Footer.scss';
-import logoSmall from '../images/kawaiiPC-logoSmall.png';
+// import logoSmall from '../images/kawaiiPC-logoSmall.png';
+import logoSmall from '../images/plamera_mar.png';
 
 const Footer = (props) => {
   return (
