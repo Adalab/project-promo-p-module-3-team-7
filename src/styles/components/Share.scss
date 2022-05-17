@@ -21,7 +21,7 @@
     height: 50px;
 
     padding: 13px 18px 13px 17px;
-    margin: 20px 0 30px;
+    margin: 20px 0 20px;
 
     color: $colorWhite;
     font-family: $fontMain;
@@ -51,7 +51,7 @@
 }
 
 .containerDone {
-  border-top: $colorWhiteTwo solid 1px;
+//  border-top: $colorWhiteTwo solid 1px;
 
   padding-bottom: 30px;
 
@@ -84,13 +84,9 @@
     border: none;
     border-radius: 3px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-
     width: 181px;
-    height: 30px;
-
-    padding: 3px 9px 6px 10.5px;
+    padding: 8px;
     margin-top: 10px;
-
     color: $colorWhite;
     font-family: $fontMain;
     font-size: 14px;

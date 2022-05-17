@@ -8,7 +8,6 @@ import localStorage from '../services/localStorage';
 
 function App() {
   // //OBJETO DATA
-
   const [dataCard, setDataCard] = useState({
     palette: '1',
     name: '',
@@ -22,13 +21,7 @@ function App() {
   });
 
   //CONSTANTE APIDATA
-
   const [apiData, setApiData] = useState({});
-  const handleClickCreateCard = () => {
-    dataApi(dataCard).then((info) => {
-      setApiData(info);
-    });
-  };
 
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
   const handleSubmit = (ev) => {
@@ -47,7 +40,6 @@ function App() {
   };
 
   //PINTAR PALETAS
-
   const handlePalettes = (data) => {
     const value = data.value;
     setDataCard({
@@ -85,7 +77,20 @@ function App() {
     setApiData();
   };
 
-  // setDataCard({ ...dataCard });
+  //CREAR TARJETA
+  const handleCreateCard = (ev) => {
+    dataApi(dataCard).then((response) => {
+      setApiData(response);
+    });
+  };
+
+  //COMPARTIR EN TWITTER
+  function shareOnTwitter(event) {
+    event.preventDefault();
+    let url = `https://twitter.com/intent/tweet?text=He%20creado%20una%20tarjeta%20profesional.%20Conóceme!%20&url=${apiData.cardURL}`;
+    window.location.href = url;
+  }
+
   return (
     <>
       <Header />
@@ -93,13 +98,14 @@ function App() {
         dataCard={dataCard}
         handlePalettes={handlePalettes}
         handleInput={handleInput}
-        handleClickCreateCard={handleClickCreateCard}
         apiData={apiData}
         handleSubmit={handleSubmit}
         handleCollapsed={handleCollapsed}
         arrowRotate={arrowRotate}
         sectionDesign={sectionDesign}
         handleReset={handleReset}
+        handleCreateCard={handleCreateCard}
+        shareOnTwitter={shareOnTwitter}
       />
 
       <Footer />

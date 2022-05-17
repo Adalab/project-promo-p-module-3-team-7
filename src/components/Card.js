@@ -45,10 +45,17 @@ function Card(props) {
 
           <Share
             dataCard={props.dataCard}
-            handlelickCreateCard={props.handlelickCreateCard}
+            handleCreateCard={props.handleCreateCard}
             handleCollapsed={props.handleCollapsed}
             arrowRotate={props.arrowRotate}
             sectionDesign={props.sectionDesign}
+            shareOnTwitter={props.shareOnTwitter}
+            apiData={props.apiData}
+            message={
+              props.apiData.success === true
+                ? `Tú tarjeta ya está lista: `
+                : `¡Revisa todos los datos!`
+            }
           />
         </form>
       </main>
