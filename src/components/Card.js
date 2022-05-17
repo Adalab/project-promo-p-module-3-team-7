@@ -53,7 +53,7 @@ function Card(props) {
             apiData={props.apiData}
             message={
               props.apiData.success === true
-                ? `Tú tarjeta ya está lista: `
+                ? `Tu tarjeta ya está lista:`
                 : `¡Revisa todos los datos!`
             }
           />
