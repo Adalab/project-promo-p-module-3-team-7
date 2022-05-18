@@ -1,3 +1,4 @@
+import GetAvatar from './GetAvatar';
 import '../styles/components/Fill.scss';
 function Fill(props) {
   const handleInput = (ev) => {
@@ -49,9 +50,16 @@ function Fill(props) {
           value={props.dataCard.job}
         />
 
-        <label className="label" htmlFor="">
-          Imagen de perfil
+        <label className="label" htmlFor="img">
+         {''}
+          Imagen de perfil {''}
         </label>
+
+        <GetAvatar
+        avatar={props.dataCard.photo}
+        updateAvatar={props.updateAvatar} />
+
+        {/*}
         <div className="component">
           <label
             className="component__btnAddImage js__profile-trigger"
@@ -70,7 +78,7 @@ function Fill(props) {
           />
 
           <div className="component__square js__profile-preview"></div>
-        </div>
+  </div>*/}
 
         <label className="label" htmlFor="email">
           E-mail

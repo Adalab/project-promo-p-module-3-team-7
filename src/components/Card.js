@@ -19,6 +19,7 @@ function Card(props) {
           dataCard={props.dataCard}
           handleReset={props.handleReset}
           handlePalettes={props.handlePalettes}
+          avatar = {props.avatar}
         />
 
         <form action="" className="form js_form" onSubmit={handleSubmit}>
@@ -39,6 +40,8 @@ function Card(props) {
             handleCollapsed={props.handleCollapsed}
             arrowRotate={props.arrowRotate}
             sectionDesign={props.sectionDesign}
+            updateAvatar={props.updateAvatar}
+            avatar={props.avatar}
           />
 
           {/* FORMULARIO COMPARTE */}
@@ -49,6 +52,7 @@ function Card(props) {
             handleCollapsed={props.handleCollapsed}
             arrowRotate={props.arrowRotate}
             sectionDesign={props.sectionDesign}
+            apiData={props.apiData}
           />
         </form>
       </main>

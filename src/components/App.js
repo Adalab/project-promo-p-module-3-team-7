@@ -9,6 +9,8 @@ import localStorage from '../services/localStorage';
 function App() {
   // //OBJETO DATA
 
+  const [avatar, setAvatar] = useState('');
+
   const [dataCard, setDataCard] = useState({
     palette: '1',
     name: '',
@@ -82,7 +84,14 @@ function App() {
       github: '',
       photo: '',
     });
-    setApiData();
+    setAvatar('');
+  };
+
+  const updateAvatar = (avatar) => {
+    setDataCard({
+      ...dataCard,
+      photo: avatar,
+    });
   };
 
   // setDataCard({ ...dataCard });
@@ -100,6 +109,8 @@ function App() {
         arrowRotate={arrowRotate}
         sectionDesign={sectionDesign}
         handleReset={handleReset}
+        avatar={avatar}
+        updateAvatar={updateAvatar}
       />
 
       <Footer />
