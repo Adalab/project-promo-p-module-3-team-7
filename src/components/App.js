@@ -8,6 +8,9 @@ import localStorage from '../services/localStorage';
 
 function App() {
   // //OBJETO DATA
+
+  const [avatar, setAvatar] = useState('');
+
   const [dataCard, setDataCard] = useState({
     palette: '1',
     name: '',
@@ -74,7 +77,14 @@ function App() {
       github: '',
       photo: '',
     });
-    setApiData();
+    setAvatar('');
+  };
+
+  const updateAvatar = (avatar) => {
+    setDataCard({
+      ...dataCard,
+      photo: avatar,
+    });
   };
 
   //CREAR TARJETA
@@ -106,6 +116,8 @@ function App() {
         handleReset={handleReset}
         handleCreateCard={handleCreateCard}
         shareOnTwitter={shareOnTwitter}
+        avatar={avatar}
+        updateAvatar={updateAvatar}
       />
 
       <Footer />

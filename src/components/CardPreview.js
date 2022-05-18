@@ -1,3 +1,4 @@
+import Profile from './Profile.js';
 import '../styles/components/CardPreview.scss';
 
 function CardPreview(props) {
@@ -28,7 +29,8 @@ function CardPreview(props) {
             </p>
           </div>
 
-          <div className="cardImage js__profile-image"></div>
+          {/*<div className="cardImage js__profile-image"></div>*/}
+          <Profile avatar={props.dataCard.photo} />
 
           <nav>
             <ul className="cardMenu">
